@@ -1,0 +1,9 @@
+# cmdコンソールで実行できる
+# nerfstudioはdockerでインストール済み
+# https://zenn.dev/sakutama_11/articles/99d2272c4e86d0
+
+docker run --gpus all -v D:\tool\nerfstudio\work:/workspace/ -v D:\tool\nerfstudio\.cache:/home/user/.cache/ -p 7007:7007 --rm -it --shm-size=12gb dromni/nerfstudio:main
+
+ns-process-data images --data input_zgok --output-dir output_zgok
+
+ns-process-data video --data zgok2.mp4 --output-dir output_zgok2
